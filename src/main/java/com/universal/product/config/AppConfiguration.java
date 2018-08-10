@@ -4,15 +4,13 @@ package com.universal.product.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 import com.universal.product.config.payment.WxPayH5Config;
-import com.universal.product.services.payment.impl.UniversalPayService;
+import com.universal.product.services.payment.impl.UniversalPayServiceImpl;
 
 
 @EnableAutoConfiguration
@@ -45,8 +43,8 @@ public class AppConfiguration {
   }
 
   @Bean
-  public UniversalPayService universalPayService(WxPayH5Config wxPayH5Config) {
-    UniversalPayService universalPayService = new UniversalPayService();
+  public UniversalPayServiceImpl universalPayService(WxPayH5Config wxPayH5Config) {
+    UniversalPayServiceImpl universalPayService = new UniversalPayServiceImpl();
     universalPayService.setWxPayH5Config(wxPayH5Config);
     return universalPayService;
   }

@@ -14,7 +14,7 @@ import com.universal.product.models.payment.wxpay.request.WxPayUnifiedorderReque
 import com.universal.product.models.payment.wxpay.response.WxPayAsyncResponse;
 import com.universal.product.models.payment.wxpay.response.WxPayRefundResponse;
 import com.universal.product.models.payment.wxpay.response.WxPaySyncResponse;
-import com.universal.product.services.payment.IUniversalPayService;
+import com.universal.product.services.payment.UniversalPayService;
 import com.universal.product.utils.payment.MoneyUtil;
 import com.universal.product.utils.payment.RandomUtil;
 import com.universal.product.utils.payment.XmlUtil;
@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-public class WxPayServiceImpl implements IUniversalPayService {
+public class WxPayServiceImpl implements UniversalPayService {
 
     private WxPayH5Config wxPayH5Config;
 
