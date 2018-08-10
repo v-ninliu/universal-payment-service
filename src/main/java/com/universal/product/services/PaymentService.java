@@ -3,7 +3,7 @@ package com.universal.product.services;
 import com.universal.product.enums.payment.UniversalPayTypeEnum;
 import com.universal.product.models.payment.PayRequest;
 import com.universal.product.models.payment.PayResponse;
-import com.universal.product.services.payment.impl.UniversalPayService;
+import com.universal.product.services.payment.impl.UniversalPayServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import static java.lang.Double.parseDouble;
 @Service public class PaymentService {
 
   @Autowired
-  private UniversalPayService universalPayService;
+  private UniversalPayServiceImpl universalPayService;
 
   public String wechatPay(HttpServletRequest request, HttpServletResponse response) {
     try {

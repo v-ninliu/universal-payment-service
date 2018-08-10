@@ -9,12 +9,12 @@ import com.universal.product.models.payment.PayRequest;
 import com.universal.product.models.payment.PayResponse;
 import com.universal.product.models.payment.RefundRequest;
 import com.universal.product.models.payment.RefundResponse;
-import com.universal.product.services.payment.IUniversalPayService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-public class UniversalPayService extends AbstractComponent implements IUniversalPayService {
+public class UniversalPayServiceImpl extends AbstractComponent implements
+    com.universal.product.services.payment.UniversalPayService {
 
     private WxPayH5Config wxPayH5Config;
 
