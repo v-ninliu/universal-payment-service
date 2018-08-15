@@ -5,6 +5,6 @@ import org.slf4j.LoggerFactory;
 
 abstract class AbstractComponent {
 
-    protected final Logger logger = LoggerFactory.getLogger("best-pay");
+    protected final Logger logger = LoggerFactory.getLogger("universal-pay");
 
 }
