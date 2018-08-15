@@ -24,11 +24,27 @@ public class UniversalPayServiceImpl extends AbstractComponent implements
 
     @Override
     public PayResponse pay(PayRequest request) {
-        //微信h5支付
-        WxPayServiceImpl wxPayService = new WxPayServiceImpl();
-        wxPayService.setWxPayH5Config(this.wxPayH5Config);
 
-        return wxPayService.pay(request);
+        UniversalPayTypeEnum payTypeEnum = request.getPayTypeEnum();
+        switch (payTypeEnum) {
+            case WXPAY_H5:
+                //微信h5支付
+                WxPayServiceImpl wxPayService = new WxPayServiceImpl();
+                wxPayService.setWxPayH5Config(this.wxPayH5Config);
+
+                return wxPayService.pay(request);
+
+            case ALIPAY_WAP:
+                //TODO
+                break;
+
+
+            default:
+                logger.error("payment type is unkown");
+                return null;
+        }
+
+        return null;
     }
 
     /**
